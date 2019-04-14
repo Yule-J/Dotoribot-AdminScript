@@ -177,10 +177,8 @@ let hr = (mm/(1000*60*60)) % 24;
             if(Api.isOn("Main.js") == true) return Api.replyRoom(room, "🛠️System :: 이미 봇이 켜져있습니다!");
             if(DataBase.getDataBase("봇_관리자/" + sender) == java.lang.String(ImageDB.getProfileImage()).hashCode()){
                 replier.reply ("🛠️System :: 도토리 봇 시작 준비중.........");
-                Api.compile("Main.js");
-                //Api.compile("Reply_Glass.js");
-                Api.on("Main.js");
-                //Api.on("Reply_Glass.js");
+                Api.compile("Main.js"); // 키고자 하는 스크립트 이름 고치세요.
+                Api.on("Main.js"); // 키고자 하는 스크립트 이름 고치세요.
                 replier.reply ("🛠️System :: 도토리 봇 가동 완료");
             } else if(DataBase.getDataBase("봇_관리자/" + sender) != java.lang.String(ImageDB.getProfileImage()).hashCode()) {
                 Api.replyRoom(room, "🛠️System :: " + sender + "님의 인증 정보가 올바르지 않아 시작 취소되었습니다.\n=관리자 인증 명령어로 인증 정보를 변경해주세요!");
@@ -194,10 +192,8 @@ let hr = (mm/(1000*60*60)) % 24;
             if(Api.isOn("Main.js") == false) return Api.replyRoom(room, "🛠️System :: 이미 봇이 꺼져있습니다!");
             if(DataBase.getDataBase("봇_관리자/" + sender) == java.lang.String(ImageDB.getProfileImage()).hashCode()){
                 replier.reply ("🛠️System :: 도토리 봇을 종료합니다.");
-                Api.unload("Main.js");
-                //Api.unload("Reply_Glass.js");
-                Api.off("Main.js");
-                //Api.off("Reply_Glass.js");
+                Api.unload("Main.js"); // 끄고자 하는 스크립트 이름 고치세요.
+                Api.off("Main.js"); // 끄고자 하는 스크립트 이름 고치세요.
             } else if(DataBase.getDataBase("봇_관리자/" + sender) != java.lang.String(ImageDB.getProfileImage()).hashCode()) {
                 Api.replyRoom(room, "🛠️System :: " + sender + "님의 인증 정보가 올바르지 않아 종료 취소되었습니다.\n=관리자 인증 명령어로 인증 정보를 변경해주세요!");
             }
@@ -210,16 +206,12 @@ let hr = (mm/(1000*60*60)) % 24;
             if(DataBase.getDataBase("봇_관리자/" + sender) == java.lang.String(ImageDB.getProfileImage()).hashCode()){
                 replier.reply ("🛠️System :: 모든 기능을 끄고 도토리 봇을 재부팅합니다.");
                 Api.unload("Main.js");
-                //Api.unload("Reply_Glass.js");
                 java.lang.Thread.sleep(1*1000);
-                Api.off("Main.js");
-                //Api.off("Reply_Glass.js");
+                Api.off("Main.js"); // 재부팅 하고자 하는 스크립트 이름 고치세요.
                 replier.reply("🛠️System :: 도토리 봇 재부팅중........")
-                Api.compile("Main.js");
-                //Api.compile("Reply_Glass.js");
+                Api.compile("Main.js"); // 재부팅 하고자 하는 스크립트 이름 고치세요.
                 java.lang.Thread.sleep(1*1000);
-                Api.on("Main.js");
-                //Api.on("Reply_Glass.js");
+                Api.on("Main.js"); // 재부팅 하고자 하는 스크립트 이름 고치세요.
                 replier.reply("🛠️System :: 도토리 봇 재부팅 성공!")
             } else if(DataBase.getDataBase("봇_관리자/" + sender) != java.lang.String(ImageDB.getProfileImage()).hashCode()) {
                 Api.replyRoom(room, "🛠️System :: " + sender + "님의 인증 정보가 올바르지 않아 재부팅 취소되었습니다.\n=관리자 인증 명령어로 인증 정보를 변경해주세요!");
