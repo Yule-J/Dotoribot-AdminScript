@@ -11,38 +11,11 @@ Copyright Goromong 2018, All rights reserved.
 4. 관리자 초기화는 관리자 권한이 없어도 진행 가능합니다. (인증 코드 필요)
 5. 관리자 추가한 다음 인증을 무조건 해야 다른 관리자 관리 명령어 사용 가능.
 6. 관리자 명령어는 첫번째로 관리자 데이터에 명령어를 입력한 사람의 이름이 있는지 확인한 다음 두번째로 프로필 사진 데이터의 해시코드를 비교해서 인증을 진행한다.
-
-<가이드라인>
-
-- 개발자의 허락 없이 소스 코드 무단 배포 금지, 자기가 만든 것마냥 행세해도 죽창 날립니다. 그런 짓 하지마세요
-- 소스 사용시 원작자를 밝혀주세요.
-  ex) 이 봇은 Goromong의 관리자 관리 소스를 사용하였습니다.
-
-<라이선스>
-
-이 소스에는 LGPL 3.0이 적용되어있습니다.
-
-one line to give the library's name and an idea of what it does.
-Copyright Goromong 2018 All rights reserved.
-
-This library is free software; you can redistribute it and/or
-modify it under the terms of the GNU Lesser General Public
-License as published by the Free Software Foundation; either
-version 2.1 of the License, or (at your option) any later version.
-
-This library is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-Lesser General Public License for more details.
-
-You should have received a copy of the GNU Lesser General Public
-License along with this library; if not, write to the Free Software
-Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
 var Permit_Code = [];
-var Admin = ["(관리자 이름)"] //(관리자 이름)에 자신의 톡 이름을 넣고 한번 저장한다음 아래에 있는 소스 한줄에 있는 //를 제거해주세요
-//var Admin=eval(DataBase.getDataBase("봇_관리자")) // 관리자 목록을 불러오는 폴더 이름 : 봇_관리자
+var Admin = ["😀"] //(관리자 이름)에 자신의 톡 이름을 넣고 한번 저장한다음 아래에 있는 소스 한줄에 있는 //를 제거해주세요
+var Admin=eval(DataBase.getDataBase("봇_관리자")) // 관리자 목록을 불러오는 폴더 이름 : 봇_관리자
 
 function isAdmin(name) {
     return Admin.indexOf(name) != -1;
